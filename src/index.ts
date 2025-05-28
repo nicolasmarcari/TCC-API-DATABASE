@@ -1,6 +1,6 @@
 import express from 'express';
 import { connectDB } from './config/dbConnect';
-import dataRoute from './routes/dataRoutes';
+import vehicleRoute from './routes/vehicleRoute';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -9,7 +9,7 @@ app.use(express.json());
 app.get('/ping', (req, res) => {
     res.status(200).send({pong: true});
 })
-app.use('/', dataRoute);
+app.use('/', vehicleRoute);
 
 connectDB().then(() => {
     app.listen(PORT, () => {

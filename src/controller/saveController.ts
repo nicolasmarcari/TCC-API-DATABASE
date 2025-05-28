@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
-import { dataModel } from '../model/dataModel';
+import { vehicleDataModel } from '../model/vehicleModel';
 
 export const saveData = async (req: Request, res: Response) => {
     try {
-        const data = new dataModel(req.body);
+        const data = new vehicleDataModel(req.body);
         await data.save();
         res.status(201).json({message: 'Success! Data saved!'});
     } catch (error) {
