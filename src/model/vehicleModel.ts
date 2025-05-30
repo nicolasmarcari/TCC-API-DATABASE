@@ -3,7 +3,7 @@ import { VehicleType } from '../validators/vehicleValidators';
 
 const vehicleDataSchema = new mongoose.Schema<VehicleType>({
     veiculo: String,
-    tipo_combustivel: Number,
+    tipo_combustivel: String,
     distancia_percorrida: Number,
     eficiencia: Number,
     uuid: String
